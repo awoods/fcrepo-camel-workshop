@@ -1,5 +1,5 @@
 # fcrepo-camel-workshop
-Files for Fedora Workshop at HC3 2015
+Files for Fedora External Integration Workshops
 
 You can deploy these files by copying them into your karaf's deploy directory.
 
