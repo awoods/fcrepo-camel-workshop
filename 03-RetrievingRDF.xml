@@ -5,6 +5,12 @@
        http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
        http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
 
+  <!-- component-wide configuration of fcrepo -->
+  <bean id="fcrepo" class="org.fcrepo.camel.FcrepoComponent">
+    <property name="authUsername" value="fedoraAdmin"/>
+    <property name="authPassword" value="secret3"/>
+  </bean>
+
   <camelContext xmlns="http://camel.apache.org/schema/blueprint"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#">
