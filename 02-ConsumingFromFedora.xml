@@ -5,7 +5,7 @@
        http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
        http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
 
-  <camelContext id="helloWorld" xmlns="http://camel.apache.org/schema/blueprint">
+  <camelContext xmlns="http://camel.apache.org/schema/blueprint">
     <route id="thumbnailRouter">
       <from uri="activemq:topic:fedora"/>
       <log message="GOT A MESSAGE FROM FEDORA"/>
