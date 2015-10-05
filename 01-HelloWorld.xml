@@ -8,7 +8,10 @@
   <camelContext id="helloWorld" xmlns="http://camel.apache.org/schema/blueprint">
     <route id="timerToLog">
       <from uri="timer:foo?period=5000"/>
-      <log message="Hello World!"/>
+        <setBody>
+          <simple>Hello Whirled!</simple>
+        </setBody>
+      <to uri="log:demo"/>
     </route>
   </camelContext>
 
