@@ -48,7 +48,7 @@
       
     <route id="thumbnailUpsert">
       <from uri="direct:upsertThumbnail"/>
-      <to uri="file:///tmp/?fileName=${property.parent}.png" />
+      <to uri="file:///tmp/?fileName=${header[org.fcrepo.jms.identifier]}.png" />
     </route>
       
   </camelContext>
