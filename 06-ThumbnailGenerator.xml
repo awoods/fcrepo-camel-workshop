@@ -41,17 +41,14 @@
 
     <route id="thumbnailGenerate">
       <from uri="direct:generateThumbnail"/>
-          <to uri="fcrepo:localhost:8080/fcrepo/rest?metadata=false"/>
-          <to uri="exec:convert?args=-thumbnail 100x100 - png:-"/>
-          <to uri="direct:upsertThumbnail"/>
+      <to uri="fcrepo:localhost:8080/fcrepo/rest?metadata=false"/>
+      <to uri="exec:convert?args=-thumbnail 100x100 - png:-"/>
+      <to uri="direct:upsertThumbnail"/>
     </route>
       
     <route id="thumbnailUpsert">
       <from uri="direct:upsertThumbnail"/>
-      <removeHeaders pattern="*"/>
-      <setHeader headerName="CamelHttpMethod"><constant>PUT</constant></setHeader>
-      <setHeader headerName="Content-Type"><constant>image/png</constant></setHeader>
-      <recipientList><simple>fcrepo:${property.parent}/thumbnail</simple></recipientList>
+      <to uri="file:///tmp/?fileName=${property.parent}.png" />
     </route>
       
   </camelContext>
