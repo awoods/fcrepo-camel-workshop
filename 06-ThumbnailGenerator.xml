@@ -51,7 +51,7 @@
       <removeHeaders pattern="*"/>
       <setHeader headerName="CamelHttpMethod"><constant>PUT</constant></setHeader>
       <setHeader headerName="Content-Type"><constant>image/png</constant></setHeader>
-      <recipientList><simple>fcrepo:${property.parent}/thumbnail</simple></recipientList>
+      <recipientList><simple>fcrepo:${property.parent}/thumbnail.png</simple></recipientList>
     </route>
       
   </camelContext>
