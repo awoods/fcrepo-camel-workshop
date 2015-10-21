@@ -48,7 +48,10 @@
       
     <route id="thumbnailUpsert">
       <from uri="direct:upsertThumbnail"/>
-      <to uri="file:///tmp/?fileName=${header[org.fcrepo.jms.identifier]}.png" />
+      <removeHeaders pattern="*"/>
+      <setHeader headerName="CamelHttpMethod"><constant>PUT</constant></setHeader>
+      <setHeader headerName="Content-Type"><constant>image/png</constant></setHeader>
+      <recipientList><simple>fcrepo:${property.parent}/thumbnail</simple></recipientList>
     </route>
       
   </camelContext>
